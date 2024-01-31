@@ -1,0 +1,35 @@
+public class Solution {
+    public IList<string> FizzBuzz(int n) {
+    
+    // creating a string to return the fizz buzz list
+    IList<string> result = new List<string>();
+    // initilising the variables, allows for Fizz buzz to be easily changed To acomodate any set of numbers and words.
+    
+    int firstNumber = 3;
+    int secondNumber = 5;
+    string firstword = "Fizz";
+     string secondword = "Buzz";
+    
+
+    //Switch statement adding the required variable to the list
+    for(int i = 1; i <=n; i++){
+       switch(i % firstNumber == 0 , i % secondNumber == 0){
+            case (true,true):
+               result.Add(firstword+secondword);
+               break;
+            case (true,false):
+                result.Add(firstword);
+                break;
+            case (false,true):
+               result.Add(secondword);
+               break;
+            default:
+                result.Add(i.ToString());
+            break;
+        }
+        
+       
+    }
+    return result;
+    }
+}
